@@ -1,5 +1,7 @@
 var socket = new WebSocket("wss://anysync-test.herokuapp.com");
 
+var worker = new Worker("worker.js");
+
 var client_time1 = 0;
 var client_time2 = 0;
 var server_offset = 0;
@@ -9,7 +11,7 @@ audio_signal.src = 'start_page/memas.mp3';
 
 
 function play_music(){
-    audio_signal.play();
+    worker.postMessage(audio_signal);
 }
 
 function change_color(){
