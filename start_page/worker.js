@@ -1,5 +1,5 @@
 function post(){
-    postMessage();
+    postMessage('lul');
 }
 
 onmessage = function(event){
