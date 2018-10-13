@@ -1,4 +1,3 @@
-
 var audio_signal = new Audio();
 audio_signal.src = 'start_page/memas.mp3';
 

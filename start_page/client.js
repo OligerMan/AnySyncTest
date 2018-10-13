@@ -1,6 +1,6 @@
 var socket = new WebSocket("wss://anysync-test.herokuapp.com");
 
-var worker = new Worker("worker.js");
+var worker = new Worker("start_page/worker.js");
 
 var client_time1 = 0;
 var client_time2 = 0;
