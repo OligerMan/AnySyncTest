@@ -6,12 +6,10 @@ var client_time1 = 0;
 var client_time2 = 0;
 var server_offset = 0;
 
-var audio_signal = new Audio();
-audio_signal.src = 'start_page/memas.mp3';
 
 
 function play_music(){
-    worker.postMessage(audio_signal);
+    worker.postMessage('load_music');
 }
 
 function change_color(){
