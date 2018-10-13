@@ -3,5 +3,5 @@ function post(){
 }
 
 onmessage = function(event){
-    setTimeout(post, event.timeout);
+    setTimeout(post, event);
 }
