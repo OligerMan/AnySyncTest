@@ -7,9 +7,11 @@ var client_time2 = 0;
 var server_offset = 0;
 
 
+var audio_signal = new Audio();
+audio_signal.src = 'start_page/memas.mp3';
 
-function play_music(){
-    worker.postMessage('load_music');
+worker.onmessage = function(){
+    audio_signal.play();
 }
 
 function change_color(){
@@ -39,7 +41,7 @@ socket.onmessage = function(event) {
             var action_time = input.data + server_offset;
             var current_delay = action_time - Date.now();
             console.log('Current delay is ' + current_delay + ' ms');
-            setTimeout(change_color, current_delay);
+            worker.postMessage(current_delay);
         }
     }
 };
