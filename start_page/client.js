@@ -15,10 +15,15 @@ worker.onmessage = function(){
     $('.check_elem').css('background-color', 'blue');
 }
 
-socket.onopen = function(event) {
-    console.log('Session opened');
+function check_timeout(){
     client_time1 = new Date().getTime();
     socket.send('get_time');
+}
+
+socket.onopen = function(event) {
+    console.log('Session opened');
+    check_timeout();
+    setInterval(check_timeout, 1000);
 }
 
 socket.onmessage = function(event) {
