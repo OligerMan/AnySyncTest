@@ -1,4 +1,4 @@
-var socket = new WebSocket("ws://localhost:54321");
+var socket = new WebSocket("ws://anysync-test.herokuapp.com");
 
 var client_time1 = 0;
 var client_time2 = 0;

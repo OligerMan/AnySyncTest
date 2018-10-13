@@ -3,6 +3,8 @@ var app = express();
 var http = require('http').Server(app);
 var WebSocketServer = require('websocket').server;
 
+var port = process.env.PORT || 54321;
+
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/start_page/index.html');
 });
@@ -46,7 +48,6 @@ wsServer.on('request', function(request){
     });
 });
 
-var port = process.env.PORT || 54321;
 
 http.listen(port, function(){
     console.log('listening on port ' + port);
