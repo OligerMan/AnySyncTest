@@ -41,6 +41,7 @@ socket.onmessage = function(event) {
             var action_time = input.data + server_offset;
             var current_delay = action_time - Date.now();
             console.log('Current delay is ' + current_delay + ' ms');
+            console.log('Action time is ' + action_time);
             worker.postMessage(current_delay);
         }
     }
