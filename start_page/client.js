@@ -12,12 +12,7 @@ audio_signal.src = 'start_page/memas.mp3';
 
 worker.onmessage = function(){
     audio_signal.play();
-}
-
-function change_color(){
-    console.log('Color changed');
     $('.check_elem').css('background-color', 'blue');
-    setTimeout(play_music, 0);
 }
 
 socket.onopen = function(event) {
