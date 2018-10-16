@@ -23,6 +23,10 @@ function check_timeout(){
 socket.onopen = function(event) {
     console.log('Session opened');
     check_timeout();
+    check_timeout();
+    check_timeout();
+    check_timeout();
+    check_timeout();
     setInterval(check_timeout, 1000);
 }
 
@@ -33,7 +37,12 @@ socket.onmessage = function(event) {
         //console.log("JSON parsed");
         if(input.data_type === 'server_time'){
             client_time2 = new Date().getTime();
-            server_offset = (client_time2 + client_time1) / 2 - input.data;
+            var new_server_offset = (client_time2 + client_time1) / 2 - input.data;
+            if(server_offset === 0){
+                server_offset = new_server_offset;
+            }else{
+                server_offset = server_offset / 5 * 4 + new_server_offset / 5;
+            }
             console.log("Server offset " + server_offset);
             console.log("Server time" + input.data);
         }
