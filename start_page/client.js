@@ -27,10 +27,10 @@ socket.onopen = function(event) {
 }
 
 socket.onmessage = function(event) {
-    console.log("Received" + event.data);
+    //console.log("Received" + event.data);
     if(event.type === 'message'){
         var input = JSON.parse(event.data);
-        console.log("JSON parsed");
+        //console.log("JSON parsed");
         if(input.data_type === 'server_time'){
             client_time2 = new Date().getTime();
             server_offset = (client_time2 + client_time1) / 2 - input.data;
