@@ -35,6 +35,7 @@ socket.onmessage = function(event) {
             client_time2 = new Date().getTime();
             server_offset = (client_time2 + client_time1) / 2 - input.data;
             console.log("Server offset " + server_offset);
+            console.log("Server time" + input.data);
         }
         else if(input.data_type === 'action_time'){
             console.log('Action time received');

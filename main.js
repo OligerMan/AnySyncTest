@@ -27,9 +27,9 @@ wsServer.on('request', function(request){
             output.data_type = 'server_time';
             output.data = Date.now();
             output = JSON.stringify(output);
-            console.log(output);
+            //console.log(output);
             connection_buffer[conn_number].send(output);
-            console.log('Time sent');
+            //console.log('Time sent');
         }
         else if(message.utf8Data === 'event_start'){
             var output = new Object();
